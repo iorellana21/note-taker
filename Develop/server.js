@@ -17,13 +17,13 @@ app.get("/notes", function (req, res) {
     res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
 
-app.get("/api/notes", function (req, res) {
-    // Should read the `db.json` file and return all saved notes as JSON
-    fs.readFile('db/db.json', 'utf8', (err, data) => {
-        if (err) throw err;
-        res.json(JSON.parse(data))
-    });
-});
+// app.get("/api/notes", function (req, res) {
+//     // Should read the `db.json` file and return all saved notes as JSON
+//     fs.readFile('db/db.json', 'utf8', (err, data) => {
+//         if (err) throw err;
+//         res.json(JSON.parse(data))
+//     });
+// });
 
 // app.post("/api/notes", function (req, res) {
 //     // Should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client
