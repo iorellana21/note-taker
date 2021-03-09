@@ -17,8 +17,12 @@ app.get("/notes", function (req, res) {
     res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
 
-app.get("/api/notes", function(req, res) {
+app.get("/api/notes", function (req, res) {
     // Should read the `db.json` file and return all saved notes as JSON
+    fs.readFile('db/db.json', 'utf8', (err, data) => {
+        if (err) throw err;
+        res.json(JSON.parse(data))
+    });
 });
 
 app.post("/api/notes", function (req, res) {
@@ -32,6 +36,6 @@ app.delete("/api/notes/:id", function (req, res) {
 });
 
 
-app.listen(PORT, function(){
+app.listen(PORT, function () {
     console.log(`listening on http://localhost:${PORT}`);
 });
