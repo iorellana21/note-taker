@@ -9,17 +9,17 @@ const PORT = process.env.PORT || 8080;
 app.get("/", function (req, res) {
     console.log("main page");
     // res.json(path.join(__dirname, "public/index.html"));
-    res.sendFile(path.join(__dirname, "/public/index.html"));
+    res.sendFile(path.join(__dirname, "/Develop/public/index.html"));
 });
 
 app.get("/notes", function (req, res) {
     console.log("notes page");
-    res.sendFile(path.join(__dirname, "/public/notes.html"));
+    res.sendFile(path.join(__dirname, "/Develop/public/notes.html"));
 });
 
 // app.get("/api/notes", function (req, res) {
 //     // Should read the `db.json` file and return all saved notes as JSON
-//     fs.readFile('db/db.json', 'utf8', (err, data) => {
+//     fs.readFile('/Develop/db/db.json', 'utf8', (err, data) => {
 //         if (err) throw err;
 //         res.json(JSON.parse(data))
 //     });
